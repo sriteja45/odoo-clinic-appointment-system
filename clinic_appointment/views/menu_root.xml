@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root menu must be loaded early so other view files can parent to it -->
+    <menuitem id="clinic_root_menu"
+        name="Clinic Management"
+        sequence="10"
+        groups="base.group_system,clinic_appointment.group_clinic_doctor,clinic_appointment.group_clinic_receptionist,clinic_appointment.group_clinic_nurse,clinic_appointment.group_clinic_lab"
+        web_icon="clinic_appointment,static/description/ActiveLife Multispeciality Clinic.png"/>
+</odoo>

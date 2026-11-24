@@ -1,0 +1,253 @@
+
+<odoo>
+        <!-- ===============================
+            APPOINTMENTS
+        ================================ -->
+        <menuitem id="clinic_appointment_menu"
+            name="Appointments"
+            parent="clinic_root_menu"
+            action="action_clinic_appointment"
+            sequence="10"
+            groups="base.group_system"/>
+        <!-- ===============================
+            EMPLOYEE ACTIONS
+        ================================ -->
+
+        
+
+            <!-- Doctors -->
+        
+
+            <!-- Receptionists -->
+        
+
+            <!-- Nurses -->
+        
+
+            <!-- Lab Technicians -->
+        
+
+        
+
+        <!-- ===============================
+        PATIENT ACTION
+        ================================ -->
+
+        
+
+            
+
+        
+
+            <!-- Menu Item -->
+        <menuitem id="menu_clinic_employee" name="Employees" parent="clinic_root_menu" action="action_clinic_employee" groups="base.group_system" sequence="20"/>
+            <!-- Submenus per role -->
+        <menuitem id="clinic_doctors_menu" name="Doctors"
+                parent="menu_clinic_employee" action="action_clinic_doctors" sequence="1"/>
+
+        <menuitem id="clinic_receptionists_menu" name="Receptionists"
+                parent="menu_clinic_employee" action="action_clinic_receptionists" sequence="2"/>
+
+        <menuitem id="clinic_nurses_menu" name="Nurses"
+                parent="menu_clinic_employee" action="action_clinic_nurses" sequence="3"/>
+
+            
+        <menuitem id="clinic_lab_menu" name="Lab Technicians"
+                parent="menu_clinic_employee" action="action_clinic_lab" sequence="4"/>
+
+        
+
+        <menuitem id="clinic_other_staff_menu" name="Other Staff"
+                parent="menu_clinic_employee" action="action_clinic_other_staff" sequence="6"/>
+
+        <menuitem id="menu_clinic_enquiry" name="Patient Enquiries"
+                parent="clinic_root_menu" action="action_clinic_enquiry" sequence="30"/>
+
+            <!-- Hospital Room Actions -->
+        
+
+        
+
+        
+
+        
+
+        <!-- Hospital Room Menu -->
+        <menuitem id="menu_hospital_room"
+                name="Rooms"
+                parent="clinic_root_menu"
+                sequence="50"/>
+
+        <menuitem id="menu_hospital_room_list"
+                name="All Rooms"
+                parent="menu_hospital_room"
+                action="action_hospital_room"
+                sequence="1"/>
+
+        <menuitem id="menu_room_booking"
+                name="Room Booking"
+                parent="menu_hospital_room"
+                action="action_room_booking"
+                sequence="2"/>
+        
+        <menuitem id="menu_occupied_rooms"
+            name="Occupied Rooms"
+            parent="menu_hospital_room"
+            action="action_occupied_rooms"
+            sequence="3"/>
+
+        <menuitem id="menu_cleaning_rooms"
+            name="Cleaning Rooms"
+            parent="menu_hospital_room"
+            action="action_cleaning_rooms"
+            sequence="4"/>
+        
+        <!-- =====================================================
+                        DOCTOR DASHBOARD
+        ====================================================== -->
+        
+        <!-- Next Patient Server Action -->
+        
+
+        <menuitem id="menu_doctor_root"
+                name="Doctor"
+                parent="clinic_root_menu"
+                sequence="30"
+                groups="clinic_appointment.group_clinic_doctor"/>
+            
+        <menuitem id="menu_doctor_next_patient"
+                name="Next Patient"
+                parent="menu_doctor_root"
+                action="action_next_patient"
+                sequence="1"
+                groups="clinic_appointment.group_clinic_doctor"/>
+
+        <menuitem id="menu_doctor_today_appointments"
+                name="Today Appointments"
+                parent="menu_doctor_root"
+                action="action_doctor_today_appointments"
+                sequence="2"
+                groups="clinic_appointment.group_clinic_doctor"/>
+
+        <menuitem id="menu_doctor_my_appointments"
+                name="My Appointments"
+                parent="menu_doctor_root"
+                action="action_doctor_my_appointments"
+                sequence="3"
+                groups="clinic_appointment.group_clinic_doctor"/>
+
+        <menuitem id="menu_doctor_completed"
+                name="Completed Consultations"
+                parent="menu_doctor_root"
+                action="action_doctor_completed_appointments"
+                sequence="4"
+                groups="clinic_appointment.group_clinic_doctor"/>
+
+        <menuitem id="menu_doctor_followups"
+                name="Follow-ups"
+                parent="menu_doctor_root"
+                action="action_doctor_followups"
+                sequence="5"
+                groups="clinic_appointment.group_clinic_doctor"/>
+
+        <!-- =====================================================
+                            LIVE CHAT 
+        ====================================================== -->
+
+        
+        
+        <menuitem id="menu_live_chat_root"
+                name="Live Chat"
+                parent="clinic_root_menu"
+                sequence="35"
+                groups="clinic_appointment.group_clinic_doctor"/>
+
+        <menuitem id="menu_live_chat_dashboard"
+                name="Chat Dashboard"
+                parent="menu_live_chat_root"
+                action="action_live_chat_dashboard"
+                sequence="10"/>
+
+        <!-- =====================================================
+                    RECEPTIONIST DASHBOARD
+        ===================================================== -->
+
+        <menuitem id="menu_receptionist_root"
+            name="Reception"
+            parent="clinic_root_menu"
+            groups="clinic_appointment.group_clinic_receptionist"/>
+
+        <!-- Today Appointments -->
+        <menuitem id="menu_reception_today"
+                name="Today Appointments"
+                parent="menu_receptionist_root"
+                action="action_reception_today_appointments"
+                sequence="1"
+                groups="clinic_appointment.group_clinic_receptionist"/>
+
+        <!-- Book Appointment -->
+        <menuitem id="menu_reception_book"
+                name="Book Appointment"
+                parent="menu_receptionist_root"
+                action="action_reception_draft_appointments"
+                sequence="2"
+                groups="clinic_appointment.group_clinic_receptionist"/>
+                
+        <!-- All Appointments -->
+        <menuitem id="menu_reception_all"
+                name="All Appointments"
+                parent="menu_receptionist_root"
+                action="action_reception_all_appointments"
+                sequence="3"
+                groups="clinic_appointment.group_clinic_receptionist"/>
+
+        <!-- Cancelled Appointments -->
+        <menuitem id="menu_reception_cancelled"
+                name="Cancelled Appointments"
+                parent="menu_receptionist_root"
+                action="action_reception_cancelled_appointments"
+                sequence="4"
+                groups="clinic_appointment.group_clinic_receptionist"/>
+
+            <!-- =====================================================
+                            NURSE DASHBOARD
+            ===================================================== -->
+
+            <menuitem id="menu_nurse_root"
+                    name="Nurse"
+                    parent="clinic_root_menu"
+                    groups="clinic_appointment.group_clinic_nurse"/>
+
+            <menuitem id="menu_nurse_today"
+                    name="Today Patients"
+                    parent="menu_nurse_root"
+                    action="action_nurse_today_patients"
+                    sequence="1"
+                    groups="clinic_appointment.group_clinic_nurse"/>
+
+            <menuitem id="menu_nurse_waiting"
+                    name="Waiting Patients"
+                    parent="menu_nurse_root"
+                    action="action_nurse_waiting_patients"
+                    sequence="2"
+                    groups="clinic_appointment.group_clinic_nurse"/>
+
+            <menuitem id="menu_nurse_consultation"
+                    name="In Consultation"
+                    parent="menu_nurse_root"
+                    action="action_nurse_in_consultation"
+                    sequence="3"
+                    groups="clinic_appointment.group_clinic_nurse"/>
+
+            <menuitem id="menu_nurse_completed"
+                    name="Completed Today"
+                    parent="menu_nurse_root"
+                    action="action_nurse_completed_today"
+                    sequence="4"
+                    groups="clinic_appointment.group_clinic_nurse"/>
+
+            <menuitem id="menu_patient_monitoring"
+                    name="Patient Monitoring"
+                    parent="menu_nurse_root"
+                    action="action_patient_monitoring"/>
+</odoo>
